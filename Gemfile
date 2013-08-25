@@ -63,18 +63,18 @@ group :development, :test do
   gem 'capistrano', '2.9.0', require: false
   gem 'rvm-capistrano', require: false
   gem 'rspec-rails', '~> 2.13.2'
+
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem "rspec-cells", '0.1.7'
   gem "capybara", "~> 0.4.1"
   gem 'api_taster', '0.6.0'
   gem "letter_opener"
-
+end 
   # 用于组合小图片
   gem "sprite-factory", "1.4.1", require: false
   gem 'chunky_png', "1.2.5", require: false
   gem 'jasmine-rails', github: 'searls/jasmine-rails'
-end
 
   gem "mongoid_colored_logger", "0.2.2"
   
