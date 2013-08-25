@@ -30,8 +30,6 @@ gem 'kaminari'
 
 # Bootstrap
 gem 'anjlab-bootstrap-rails', '>= 3.0.0.0', :require => 'bootstrap-rails'
-# gem 'bootstrap-will_paginate', '0.0.3'
-gem 'bootstrap_helper', github: 'huacnlee/bootstrap-helper'
 
 # 三方平台 OAuth 验证登陆
 gem "omniauth"
