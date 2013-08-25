@@ -1,0 +1,75 @@
+<div id="masonry-container" class="transitions-enabled centered infinite-scroll clearfix">
+  <div class="page">
+    <%= render @products %>
+  </div>
+</div>
+<%= paginate @products %>
+<div id="gotop"></div>
+<style type="text/css">
+#gotop {
+    display:none;
+    width:55px;
+    height:55px;
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    background: url("<%= asset_path('backtop.png') %>") no-repeat -70px 0px;    
+}
+</style>
+<script>
+$(document).ready(function(){
+  $("#masonry-container").infinitescroll({
+    navSelector : "nav.pagination", // selector for the paged navigation (it will be hidden)
+    nextSelector : "nav.pagination a[rel=next]", // selector for the NEXT link (to page 2)
+    itemSelector : "#masonry-container div.box",
+    loading: {
+        finishedMsg: '没有更多结果了.',
+        img: 'http://i.imgur.com/6RMhx.gif',
+        msgText: '正在加载下一页'
+      }
+    },
+    function( newElements ) {
+      // hide new items while they are loading
+      var $newElems = $( newElements ).css({ opacity: 0 });
+      // ensure that images load before adding to masonry layout
+      $newElems.imagesLoaded(function(){
+        // show elems now they're ready
+        $newElems.animate({ opacity: 1 });
+        $("#masonry-container").masonry( 'appended', $newElems, true ); 
+      });
+    }); // selector for all items you'll retrieve
+    $('#masonry-container').masonry({
+      itemSelector: '.box',
+      columnWidth: 100,
+      // columnWidth: function( containerWidth ) {
+      //   return containerWidth / 15;
+      // },
+      gutterWidth: 10,
+      isAnimated: !Modernizr.csstransitions,
+      // isRTL: true //从右至左排列
+      isFitWidth: true //居中排列
+    });
+    function goTop()
+    {
+        $(window).scroll(function(e) {
+            //若滚动条离顶部大于100元素
+            if($(window).scrollTop()>100)
+                $("#gotop").fadeIn(1000);//以1秒的间隔渐显id=gotop的元素
+            else
+                $("#gotop").fadeOut(1000);//以1秒的间隔渐隐id=gotop的元素
+        });
+    };
+
+    $("#gotop").click(function(e) {
+            //以1秒的间隔返回顶部
+            $('body,html').animate({scrollTop:0},1000);
+    });
+    $("#gotop").mouseover(function(e) {
+        $(this).css("background","url(<%= asset_path('backtop.png') %>) no-repeat 0px 0px");
+    });
+    $("#gotop").mouseout(function(e) {
+        $(this).css("background","url(<%= asset_path('backtop.png') %>) no-repeat -70px 0px");
+    });
+    goTop();//实现回到顶部元素的渐显与渐隐
+});
+</script>
