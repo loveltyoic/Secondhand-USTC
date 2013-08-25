@@ -20,7 +20,9 @@ gem 'carrierwave', '0.6.2'
 gem 'mini_magick','3.3', require: false
 
 # Mongoid 辅助插件
-gem "mongoid", github: 'mongoid/mongoid', ref: '11e45e5a30a45458b83db99ab6c9d9ccc337e66f'
+gem 'bson_ext'
+gem 'mongoid', git: 'https://github.com/mongoid/mongoid.git'
+
 
 
 # 分页
@@ -43,7 +45,7 @@ gem "cancan", "~> 1.6.10"
 gem "social-share-button", '0.1.4'
 
 # 表单
-gem 'simple_form', "3.0.0.rc"
+gem 'simple_form'
 
 # API
 
@@ -71,14 +73,14 @@ group :development, :test do
   # 用于组合小图片
   gem "sprite-factory", "1.4.1", require: false
   gem 'chunky_png', "1.2.5", require: false
-
   gem 'jasmine-rails', github: 'searls/jasmine-rails'
+end
+
   gem "mongoid_colored_logger", "0.2.2"
   
   gem "quiet_assets", "~> 1.0.2"
-end
 
 group :production do
-  gem 'unicorn'
-  gem 'newrelic_rpm'
+  # gem 'unicorn'
+  # gem 'newrelic_rpm'
 end
