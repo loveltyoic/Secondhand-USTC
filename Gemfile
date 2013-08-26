@@ -72,9 +72,9 @@ group :development, :test do
   gem "letter_opener"
 end 
   # 用于组合小图片
-  gem "sprite-factory", "1.4.1", require: false
-  gem 'chunky_png', "1.2.5", require: false
-  gem 'jasmine-rails', github: 'searls/jasmine-rails'
+  # gem "sprite-factory", "1.4.1", require: false
+  # gem 'chunky_png', "1.2.5", require: false
+  # gem 'jasmine-rails', github: 'searls/jasmine-rails'
 
   gem "mongoid_colored_logger", "0.2.2"
   
