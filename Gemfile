@@ -68,8 +68,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem "rspec-cells", '0.1.7'
   gem "capybara", "~> 0.4.1"
-  gem 'api_taster', '0.6.0'
-  gem "letter_opener"
 end 
   # 用于组合小图片
   # gem "sprite-factory", "1.4.1", require: false
@@ -77,8 +75,6 @@ end
   # gem 'jasmine-rails', github: 'searls/jasmine-rails'
 
   gem "mongoid_colored_logger", "0.2.2"
-  
-  gem "quiet_assets", "~> 1.0.2"
 
 group :production do
   # gem 'unicorn'
