@@ -1,0 +1,21 @@
+<div class="thing_wrapper row">
+  <div class="row">
+    <div class="col-md-12 thing_header">
+      <h1><%= @product.title %></h1>
+      <h4><%= format_date(@product.created_at) %></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7 bottom-border right-border">
+      <div class="bottom-border">
+        <%= render 'picture_slide' %>
+      </div>
+      <div class="bottom-border">
+        <h4><%= @product.description %><h4>
+      </div>
+      <%= render 'reply_box' %>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

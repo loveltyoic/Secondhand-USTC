@@ -20,19 +20,19 @@ role :db,  domain, :primary => true
 
 namespace :deploy do
 
-  namespace :assets do
-    task :precompile, :roles => :web, :except => { :no_release => true } do
-      from = source.next_revision(current_revision)
-      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
-        run_locally "bundle exec rake assets:precompile"
-        find_servers_for_task(current_task).each do |server|
-          run_locally "rsync -vr --exclude='.DS_Store' public/assets #{user}@#{domain}:#{deploy_to}/#{shared_path}/"
-        end
-      else
-        logger.info "Skipping asset pre-compilation because there were no asset changes"
-      end
-    end
-  end
+  # namespace :assets do
+  #   task :precompile, :roles => :web, :except => { :no_release => true } do
+  #     from = source.next_revision(current_revision)
+  #     if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
+  #       run_locally "bundle exec rake assets:precompile"
+  #       find_servers_for_task(current_task).each do |server|
+  #         run_locally "rsync -vr --exclude='.DS_Store' public/assets #{user}@#{domain}:#{deploy_to}/#{shared_path}/"
+  #       end
+  #     else
+  #       logger.info "Skipping asset pre-compilation because there were no asset changes"
+  #     end
+  #   end
+  # end
 
   task :copy_config_files, :roles => :app do
     db_config = "#{shared_path}/mongoid.yml"
@@ -55,6 +55,6 @@ namespace :deploy do
   end
 end
 
-after "deploy:update_code", "deploy:copy_config_files" # 如果將database.yml放在shared下，請打開
+# after "deploy:update_code", "deploy:copy_config_files" # 如果將database.yml放在shared下，請打開
 after "deploy:finalize_update", "deploy:bundle_install"
 after "deploy:bundle_install", "deploy:update_symlink"

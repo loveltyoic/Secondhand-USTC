@@ -1,0 +1,4 @@
+$('#comment-content').val('');
+$('#new_reply').before("<div class='alert alert-dismissable alert-success'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>X</button><%= flash[:notice] %></div>");
+$('#reply-list').append('<%= j(render partial: "comments/comment", object: @comment, as: :comment) %>');
+

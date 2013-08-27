@@ -1,0 +1,40 @@
+
+<% unless more_than_one_picture?(@product.picture) %> 
+  <!-- 只有一张图片，不用幻灯片 -->
+  <%= image_tag @product.picture[0] %>
+<% else %>
+<div id="product-picture" class="carousel slide">
+  <!-- 多于一张图片，用幻灯片播放 -->
+  <div class="carousel-inner">
+    <% @product.picture.each do |pic| %>
+      <div class="item">
+        <%= image_tag pic %>
+        <div class="carousel-caption">
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+<!--     <a class="carousel-control" href="#product-picture" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#product-picture" data-slide="next">
+    <span class="icon-next"></span>
+  </a> -->
+</div>
+<!-- 用图片缩略图作为选择器 -->
+<div class="row product-thumb">
+  <% @product.picture.each_index do |index| %>
+  <div class="col-md-2">
+    <div class="thumbnail">
+      <%= image_tag @product.picture[index], "data-target" => "#product-picture", "data-slide-to" => "#{index}" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>
+<script>
+$('div.carousel-inner .item:first').addClass("active");
+$('#product-picture').carousel();
+</script>

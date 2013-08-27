@@ -40,29 +40,31 @@ $(document).ready(function(){
     }); // selector for all items you'll retrieve
     $('#masonry-container').masonry({
       itemSelector: '.box',
-      columnWidth: 100,
-      // columnWidth: function( containerWidth ) {
-      //   return containerWidth / 15;
-      // },
-      gutterWidth: 10,
+      // columnWidth: 150,
+      // 一共有6个column,每个column的width可以是固定值，也可以相对容器的宽度设定
+      columnWidth: function( containerWidth ) {
+        console.log(containerWidth);
+        return containerWidth / 6;
+      },
+      // gutterWidth: 10,
       isAnimated: !Modernizr.csstransitions,
       // isRTL: true //从右至左排列
       isFitWidth: true //居中排列
     });
     function goTop()
     {
-        $(window).scroll(function(e) {
-            //若滚动条离顶部大于100元素
-            if($(window).scrollTop()>100)
-                $("#gotop").fadeIn(1000);//以1秒的间隔渐显id=gotop的元素
-            else
-                $("#gotop").fadeOut(1000);//以1秒的间隔渐隐id=gotop的元素
-        });
+      $(window).scroll(function(e) {
+          //若滚动条离顶部大于100元素
+          if($(window).scrollTop()>100)
+              $("#gotop").fadeIn(1000);//以1秒的间隔渐显id=gotop的元素
+          else
+              $("#gotop").fadeOut(1000);//以1秒的间隔渐隐id=gotop的元素
+      });
     };
 
     $("#gotop").click(function(e) {
-            //以1秒的间隔返回顶部
-            $('body,html').animate({scrollTop:0},1000);
+      //以0.5秒的间隔返回顶部
+      $('body,html').animate({scrollTop:0},500);
     });
     $("#gotop").mouseover(function(e) {
         $(this).css("background","url(<%= asset_path('backtop.png') %>) no-repeat 0px 0px");
@@ -71,5 +73,6 @@ $(document).ready(function(){
         $(this).css("background","url(<%= asset_path('backtop.png') %>) no-repeat -70px 0px");
     });
     goTop();//实现回到顶部元素的渐显与渐隐
+    $("div.box h4").tooltip({placement: 'bottom'});
 });
 </script>

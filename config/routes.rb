@@ -17,15 +17,18 @@ SecondhandUstc::Application.routes.draw do
   # Example resource route with options:
     resources :products do
       member do
-        get 'short'
-        post 'toggle'
+        # get 'short'
+        # post 'toggle'
       end
   
       collection do
-        get 'sold'
+        get 'search_by_title_keyword'
+        get 'sell'
+        get 'buy'
+        get 'evaluate'
       end
     end
-
+    resources :comments
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

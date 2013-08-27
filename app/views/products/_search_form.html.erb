@@ -1,0 +1,6 @@
+<%= form_tag search_by_title_keyword_products_path, :class => 'navbar-form navbar-left', method: 'get' do %>
+  <div class="form-group">
+    <%= text_field_tag :keyword, params[:keyword], class: "form-control", :placeholder => "关键字" %>
+  </div>
+  <button type="submit" name="nil" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+<% end %>

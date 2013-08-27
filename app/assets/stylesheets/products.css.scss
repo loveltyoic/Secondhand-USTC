@@ -1,3 +1,252 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the cars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html {
+  height: 100%;
+}
+
+body {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  background: none repeat scroll 0 0 transparent;
+  background-color: #EEEEEE;
+  color: #585858;
+}
+.box {
+  background: none repeat scroll 0 0 white;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  float: left;
+  margin: 1em;
+  padding: 1em;
+  position: relative;
+  color: #999999;
+  font-size: 14px;
+}
+#request-box {
+  border: 1px solid #CCCCCC;
+  border-radius: 3px 3px 3px 3px;
+  padding: 0;
+}
+#request-box .rent-rates {
+  background-color: #54544E;
+  color: white;
+  padding: 10px 0;
+}
+#request-box .request-tool {
+  padding: 20px;
+}
+#request-box .rent-rates .price-block {
+  -moz-box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  width: 49%;
+  height: 50px;
+}
+#request-box .rent-rates .price-block .rmb-symbol {
+    font-size: 15px;
+    position: relative;
+    right: 2px;
+    top: -19px;
+}
+#request-box .rent-rates .price-block .rmb {
+    font-size: 42px;
+    font-weight: 500;
+}
+#request-box .rent-rates .price-block .cents {
+    font-size: 15px;
+    position: relative;
+    top: -19px;
+}
+#request-box .rent-rates .price-block .separator {
+    font-family: 'Helvetica Neue Ultra Light','HelveticaNeue-Ultralight',"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+}
+#request-box .rent-rates .price-block .unit {
+    font-size: 15px;
+}
+#request-box .rent-rates .price-block .unit {
+    font-size: 15px;
+}
+#request-box .rent-rates .price-block.small .rmb-symbol {
+    font-size: 13px;
+    top: -4px;
+}
+#request-box .rent-rates .price-block.small .rmb {
+    font-size: 18px;
+}
+#request-box .rent-rates .price-block.small .cents {
+    font-size: 13px;
+    top: -4px;
+}
+#request-box .rent-rates .price-block.small .separator {
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 0.1em;
+    margin-right: 0.15em;
+}
+#request-box .rent-rates .price-block.small .unit {
+    font-size: 13px;
+}
+#request-box .rent-period {
+  background-color: #54544E;
+  color: #FFF;
+  padding: 0 15px;
+}
+.page-header, .form-header {
+  margin: 0;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+.page-header h1, .form-header h2 {
+  margin: 0;
+  padding: 20px 8px;
+}
+#product-description h4 {
+  color: #FC7C1A
+}
+ul.abstract_info li {
+  line-height: 2;
+}
+.mark-box {
+  margin: 0;
+  position: relative;
+  height: 80px;
+}
+.mark-brand {
+  background: none repeat scroll 0 0 #28BCDC;
+  color: white;
+  display: inline-block;
+  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1em;
+  padding: 10px 20px;
+  position: absolute;
+  top: -75px;
+  left: -10px;
+  z-index: 100;
+}
+.mark-brand:after {
+  background: image-url("corner.png") no-repeat scroll 0 0 / 10px auto transparent;
+  bottom: -10px;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 0;
+  position: absolute;
+  width: 10px;
+}
+.table td {
+  vertical-align: top;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+.container-radius {
+  border: 1px solid #e5e5e5;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  min-height: 500px;
+}
+
+.alert-box {
+  margin: 0;
+}
+
+.wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 960px;
+}
+div.box .pre_ribbon {
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 100px;
+    letter-spacing: 0.5em;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+div.box .pre_ribbon.presell span {
+    background: none repeat scroll 0 0 #F89406;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    display: block;
+    left: 20px;
+    padding-left: 10px;
+    padding-top: 3px;
+    position: relative;
+    text-align: center;
+    top: -37px;
+    transform: rotate(45deg);
+    transform-origin: 0 0 0;
+    width: 150px;
+}
+div.box h4 {
+    color: #999999;
+    font-size: 14px;
+    height: 20px;
+    margin: 1em 0 0.5em;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+a.navbar-brand {
+  margin-left: 40px;
+  color: #049CDB !important;
+}
+.navbar-brand img {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+.thing_wrapper {
+    background: none repeat scroll 0 0 white;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 1em 20px;
+}
+.thing_wrapper:before, .thing_wrapper:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.thing_wrapper:after {
+    clear: both;
+}
+.thing_header {
+    border-bottom: 1px solid #EEEEEE;
+    margin-bottom: 2em;
+}
+.thing_header h4, .comments h4 {
+  color: #999999;
+}
+.bottom-border {
+  border-bottom: 1px solid #EEEEEE;
+  margin-bottom: 2em;
+  padding-bottom: 20px;
+}
+.right-border {
+  border-right: 1px solid #EEEEEE;
+  padding-left: 10px;
+}
+ul#reply-list {
+    border-top: 5px solid #EEEEEE;
+    margin: 1em 0 2em;
+    padding-top: 2em;
+}
+.product-thumb {
+  margin-top: 15px;
+}

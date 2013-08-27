@@ -1,0 +1,16 @@
+<div class="comments">
+  <h4><span class='glyphicon glyphicon-comment' style="padding:5px"></span></h4>
+  <ul id="reply-list" class="meida-list">
+    <% unless @product.comments.empty? %>    
+    <%= render partial: 'comments/comment', collection: @product.comments, as: :comment %>
+    <% end %>
+  </ul>
+  <div class="bottom-border" id="new_reply">
+    <%= form_for Comment.new, :url => comments_path(product_id: @product.id), :remote => true, "data-type" => 'script' do |f| %>
+      <%= f.text_area :content, id: 'comment-content', :class => "col-md-12 well", :rows => "4" %>
+      <div class="submit_buttons">
+        <button type="submit" id="btn_reply" class="btn btn-primary">提交评论</button>
+      </div>
+    <% end %>  
+  </div>
+</div>

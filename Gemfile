@@ -45,7 +45,7 @@ gem "cancan", "~> 1.6.10"
 gem "social-share-button", '0.1.4'
 
 # 表单
-gem 'simple_form'
+gem 'simple_form', git: 'https://github.com/plataformatec/simple_form'
 
 # API
 

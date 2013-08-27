@@ -1,0 +1,12 @@
+$(document).ready(function(){
+  $("#comments").prepend("<div class='alert alert-success'><%= flash[:notice] %></div>");
+  alert("succeed!");
+  $("#comments").append("  <li class="media bottom-border">
+    <div class="media-body">
+      <h4 class="media-heading"><%= comment.content %></h4>
+      <%= comment.content %>
+    </div>
+  </li>");
+
+});
+<a class="close" data-dismiss="alert" href="#">X</a>
