@@ -6,5 +6,5 @@ Secondhand-USTC
 用一天的时间做了个demo，只是实现了首页的瀑布流展示。
 边学边改吧。
 
-网站设计借鉴了[1]
+页面设计基本模仿了[Knewone][1]
 [1]:  http://knewone.com  "Knewone"
