@@ -3,5 +3,5 @@
     <span><%= product.tag %></span>
   </div>
   <%= link_to (image_tag product.picture[0]), product %>
-  <h4 data-toggle="tooltip" title="<%= product.title %>"><%= product.title %></h4>
+  <h4 data-toggle="tooltip" title="<%= product.title %>"><%= truncate product.title %></h4>
 </div>
