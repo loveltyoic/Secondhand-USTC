@@ -7,6 +7,16 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update_attributes(product_params)
+    redirect_to product_url(@product)
+  end
+
   def create
     @product = Product.new(product_params)
     @product.picture = [] 
@@ -57,7 +67,7 @@ class ProductsController < ApplicationController
   #   end
   # end
   def product_params
-    params.require(:product).permit(:title, :url, :tag, :picture, :discription)
+    params.require(:product).permit(:title, :url, :tag, :picture, :description)
   end
 
   def newest
