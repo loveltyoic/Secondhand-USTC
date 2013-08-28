@@ -38,19 +38,26 @@ $(document).ready(function(){
         $("#masonry-container").masonry( 'appended', $newElems, true ); 
       });
     }); // selector for all items you'll retrieve
-    $('#masonry-container').masonry({
-      itemSelector: '.box',
-      // columnWidth: 150,
-      // 一共有6个column,每个column的width可以是固定值，也可以相对容器的宽度设定
-      columnWidth: function( containerWidth ) {
-        console.log(containerWidth);
-        return containerWidth / 6;
-      },
-      // gutterWidth: 10,
-      isAnimated: !Modernizr.csstransitions,
-      // isRTL: true //从右至左排列
-      isFitWidth: true //居中排列
+    $(window).load(function(){
+      $('#masonry-container').masonry({
+        itemSelector: '.box',
+        // columnWidth: 150,
+        // 一共有6个column,每个column的width可以是固定值，也可以相对容器的宽度设定
+        columnWidth: function( containerWidth ) {
+          console.log(containerWidth);
+          return containerWidth / 6;
+        },
+        // gutterWidth: 10,
+        //isAnimated: !Modernizr.csstransitions,
+        // isRTL: true //从右至左排列
+        isFitWidth: true //居中排列
+      });
     });
+    // $('#masonry-container').isotope({
+    //   // options
+    //   itemSelector : '.box',
+    //   layoutMode : 'fitRows'
+    // });
     function goTop()
     {
       $(window).scroll(function(e) {

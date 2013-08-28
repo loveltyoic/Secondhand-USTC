@@ -1,6 +1,6 @@
-<div class="box col5">
-  <div class="ribbon <%= product.en_tag %>">
-    <span><%= product.tag %></span>
+<div class="box col-md-5">
+  <div class="ribbon">
+    <span class="<%= product.en_tag %>"><%= product.tag %></span>
   </div>
   <%= link_to (image_tag product.picture[0]), product %>
   <h4 data-toggle="tooltip" title="<%= product.title %>"><%= truncate product.title %></h4>

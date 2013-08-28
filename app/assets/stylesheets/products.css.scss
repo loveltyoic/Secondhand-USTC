@@ -5,6 +5,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "twitter/bootstrap";
 
 html {
   height: 100%;
@@ -19,6 +20,7 @@ body {
 }
 img {
   max-width: 100% !important;
+  max-height: 100%;
 }
 .box {
   background: none repeat scroll 0 0 white;
@@ -181,6 +183,13 @@ div.box .ribbon {
     top: 0;
     width: 100px;
 }
+@mixin transform-origin($value) {
+    -webkit-transform-origin: $value;
+    -moz-transform-origin: $value;
+    -ms-transform-origin: $value;
+    -o-transform-origin: $value;
+    transform-origin: $value; 
+}
 div.box .ribbon span {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     display: block;
@@ -190,18 +199,19 @@ div.box .ribbon span {
     position: relative;
     text-align: center;
     top: -37px;
-    transform: rotate(45deg);
-    transform-origin: 0 0 0;
+    @include rotate(45deg);
+    @include transform-origin(0 0);
     width: 150px;
-}
-div.box .ribbon.sell span {
-    background: none repeat scroll 0 0 #F89406;
-}
-div.box .ribbon.evaluate span {
-      background: none repeat scroll 0 0 #46A546;
-}
-div.box .ribbon.buy span {
-      background: none repeat scroll 0 0 #1E90FF;
+    background: none repeat scroll 0 0;
+    &.sell {
+      background-color: #F89406;
+    }
+    &.buy {
+      background-color: #1E90FF;
+    }
+    &.evaluate {
+      background-color: #46A546;
+    }
 }
 div.box h4 {
     color: #999999;
@@ -228,14 +238,7 @@ a.navbar-brand {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     padding: 1em 20px;
-}
-.thing_wrapper:before, .thing_wrapper:after {
-    content: "";
-    display: table;
-    line-height: 0;
-}
-.thing_wrapper:after {
-    clear: both;
+    @include clearfix;
 }
 .thing_header {
     border-bottom: 1px solid #EEEEEE;
