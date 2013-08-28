@@ -10,4 +10,15 @@ module ProductsHelper
   def how_many_pictures(pic)
     pic.length
   end
+
+  def tag_chn_to_en(tag)
+    if tag == '出售'
+      return 'sell'
+    elsif tag == '求购'
+      return 'buy'
+    else
+      'evaluate'
+    end
+  end
+      
 end

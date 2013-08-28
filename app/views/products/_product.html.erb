@@ -1,8 +1,7 @@
-<div class="box col3">
-<div class="pre_ribbon presell">
-  <span><%= product.tag %></span>
-</div>
-<%= link_to (image_tag product.picture[0]), product %>
-<h4><%= format_date(product.created_at) %></h4>
-<h4 data-toggle="tooltip" title="<%= product.title %>"><%= product.title %></h4>
+<div class="box col5">
+  <div class="ribbon <%= product.en_tag %>">
+    <span><%= product.tag %></span>
+  </div>
+  <%= link_to (image_tag product.picture[0]), product %>
+  <h4 data-toggle="tooltip" title="<%= product.title %>"><%= product.title %></h4>
 </div>

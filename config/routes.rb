@@ -26,6 +26,7 @@ SecondhandUstc::Application.routes.draw do
         get 'sell'
         get 'buy'
         get 'evaluate'
+        get 'newest'
       end
     end
     resources :comments

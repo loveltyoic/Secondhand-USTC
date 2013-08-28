@@ -32,19 +32,19 @@ class ProductsController < ApplicationController
   end
   
   def sell
-    @products = Product.where(:tag => '出售').page params[:page]
+    @products = Product.where(:tag => '出售').desc(:created_at).page params[:page]
     session[:current_tag] = '出售'
     render 'index'
   end
 
   def evaluate
-    @products = Product.where(tag: '估价').page params[:page]
+    @products = Product.where(tag: '估价').desc(:created_at).page params[:page]
     session[:current_tag] = '估价'
     render 'index'
   end
 
   def buy
-    @products = Product.where(tag: '求购').page params[:page]
+    @products = Product.where(tag: '求购').desc(:created_at).page params[:page]
     session[:current_tag] = '求购'
     render 'index'
   end
@@ -58,6 +58,10 @@ class ProductsController < ApplicationController
   # end
   def product_params
     params.require(:product).permit(:title, :url, :tag, :picture, :discription)
+  end
+
+  def newest
+    @products = Product.desc(:created_at).limit(20)
   end
 
 end

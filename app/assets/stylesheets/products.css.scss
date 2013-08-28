@@ -17,6 +17,9 @@ body {
   background-color: #EEEEEE;
   color: #585858;
 }
+img {
+  max-width: 100% !important;
+}
 .box {
   background: none repeat scroll 0 0 white;
   border-radius: 8px 8px 8px 8px;
@@ -167,7 +170,7 @@ ul.abstract_info li {
     overflow: hidden;
     width: 960px;
 }
-div.box .pre_ribbon {
+div.box .ribbon {
     color: #FFFFFF;
     font-weight: bold;
     height: 100px;
@@ -178,8 +181,7 @@ div.box .pre_ribbon {
     top: 0;
     width: 100px;
 }
-div.box .pre_ribbon.presell span {
-    background: none repeat scroll 0 0 #F89406;
+div.box .ribbon span {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     display: block;
     left: 20px;
@@ -191,6 +193,15 @@ div.box .pre_ribbon.presell span {
     transform: rotate(45deg);
     transform-origin: 0 0 0;
     width: 150px;
+}
+div.box .ribbon.sell span {
+    background: none repeat scroll 0 0 #F89406;
+}
+div.box .ribbon.evaluate span {
+      background: none repeat scroll 0 0 #46A546;
+}
+div.box .ribbon.buy span {
+      background: none repeat scroll 0 0 #1E90FF;
 }
 div.box h4 {
     color: #999999;
@@ -249,4 +260,7 @@ ul#reply-list {
 }
 .product-thumb {
   margin-top: 15px;
+}
+.pagination {
+  display: none;
 }
