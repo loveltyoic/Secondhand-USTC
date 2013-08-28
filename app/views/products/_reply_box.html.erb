@@ -7,7 +7,7 @@
   </ul>
   <div class="bottom-border" id="new_reply">
     <%= form_for Comment.new, :url => comments_path(product_id: @product.id), :remote => true, "data-type" => 'script' do |f| %>
-      <%= f.text_area :content, id: 'comment-content', :class => "col-md-12 well", :rows => "4" %>
+      <%= f.text_area :content, placeholder: '输入评论内容', id: 'comment-content', :class => "col-md-12 well", :rows => "4" %>
       <div class="submit_buttons">
         <button type="submit" id="btn_reply" class="btn btn-primary">提交评论</button>
       </div>

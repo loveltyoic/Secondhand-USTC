@@ -7,7 +7,7 @@
   <!-- 多于一张图片，用幻灯片播放 -->
   <div class="carousel-inner">
     <% @product.picture.each do |pic| %>
-      <div class="item">
+      <div class="item picture-box">
         <%= image_tag pic %>
         <div class="carousel-caption">
         </div>
